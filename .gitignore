@@ -1,0 +1,30 @@
+# Local datasets and generated downloads
+data/
+*.tar.gz
+*.zip
+*.gz
+
+# Backup and duplicate local files
+Backup File/
+FedAvg_Project_v4.ipynb
+Course Project (1).pdf
+
+# Python / Jupyter cache
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
