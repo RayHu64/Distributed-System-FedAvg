@@ -30,19 +30,24 @@ The goal of this project is to understand how federated learning behaves when da
 
 ## Results Summary
 
-FashionMNIST results show that FedAvg performs close to centralized training under non-IID splits:
+![Centralized training vs FedAvg test accuracy on FashionMNIST and CIFAR-10](docs/accuracy_comparison.png)
 
-- Centralized baseline test accuracy: 90.48% mean
-- FedAvg test accuracy: 89.21% mean
-- Accuracy gap: -1.27%
+Mean test accuracy over 5 runs (variance in parentheses):
 
-The results demonstrate that FedAvg can approximate centralized training performance, while showing higher variance due to non-IID client data distribution.
+| Dataset | Centralized baseline | FedAvg, 5 non-IID clients | Gap |
+|---|---|---|---|
+| FashionMNIST | 90.48% (0.0429) | 89.21% (0.1173) | -1.27 pts |
+| CIFAR-10 | 71.76% (0.2870) | 69.08% (1.2891) | -2.67 pts |
+
+- FedAvg stays close to centralized training on both datasets, but never matches it.
+- The gap is wider on CIFAR-10, the harder dataset, and FedAvg results vary more from run to run there, which reflects the uneven, non-IID client data.
 
 ## Files
 
 - `Final_Project_Code.ipynb`: full implementation and experiment notebook
 - `Final_Project_Report.html`: rendered report with experiment outputs and plots
 - `requirements.txt`: Python dependencies used by the notebook
+- `docs/accuracy_comparison.png`: chart of the results above
 
 Large local datasets are intentionally excluded from the repository. The notebook downloads FashionMNIST and CIFAR-10 through `torchvision.datasets` when executed.
 
@@ -75,3 +80,6 @@ Then run the notebook cells in order. Dataset files will be downloaded locally i
 
 This project demonstrates distributed machine learning concepts, experimental design, model evaluation, and the implementation of a federated training loop from scratch using PyTorch.
 
+## License
+
+MIT
